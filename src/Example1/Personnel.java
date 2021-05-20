@@ -1,6 +1,8 @@
 package Example1;
 
-public class Personnel {
+import java.util.Comparator;
+
+public class Personnel implements Comparable<Personnel> {
     private String name;
     private int age;
     private int id;
@@ -55,5 +57,11 @@ public class Personnel {
                 ", id=" + id +
                 ", hometown='" + hometown + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Personnel personnel) {
+        return this.getName().compareTo(personnel.getName());
     }
 }
